@@ -77,6 +77,7 @@ exports.createServer = function(port, maxFrameSize) {
                 switch (parsed.type) {
                     case 'publish':
                         handlePublish(parsed);
+                        
                         break;
                     case 'subscribe':
                         handleSubscribe(parsed);
