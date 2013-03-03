@@ -6,19 +6,12 @@ var log = require('./log');
 var receivers = {};
 
 // push a message with destination and call matched receivers
-function push(message, destination) {
+function push(jobj) {
     for (var key in receivers) {
         var receiver = receivers[key];
         var destinationRegex = receiver['destination'];
         var callback = receiver['callback'];
-        var matchResult = destinationRegex.exec(destination);
-        if (matchResult != null) {
-            try {
-                callback(message, matchResult);
-            } catch(e) {
-                log.warn(e);
-            }
-        }
+        callback(jobj);
     }
 }
 

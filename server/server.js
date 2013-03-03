@@ -10,8 +10,8 @@ log.setColoredOutput(config.coloredOutput);
 
 console.info();
 console.info('    TimeShiftGameServer!');
-console.info('    Leader: Enel-Pu');V
-console.info('    ersion 1.0');
+console.info('    Leader: Enel-Pu');
+console.info('    Version 1.0');
 console.info();
 
 tcp.createServer(config.tcpPort, config.maxFrameSize);
